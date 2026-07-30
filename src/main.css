@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 214 65% 11%;
+    --foreground: 210 40% 95%;
+    --card: 214 55% 14%;
+    --card-foreground: 210 40% 95%;
+    --popover: 214 55% 14%;
+    --popover-foreground: 210 40% 95%;
+    --primary: 42 95% 55%;
+    --primary-foreground: 214 65% 11%;
+    --secondary: 214 45% 16%;
+    --secondary-foreground: 210 40% 95%;
+    --muted: 214 35% 18%;
+    --muted-foreground: 210 20% 65%;
+    --accent: 150 35% 45%;
+    --accent-foreground: 214 65% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 95%;
+    --border: 214 35% 20%;
+    --input: 214 35% 20%;
+    --ring: 42 95% 55%;
+    --radius: 0.75rem;
+    --sidebar-background: 214 65% 11%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 42 95% 55%;
+    --sidebar-primary-foreground: 214 65% 11%;
+    --sidebar-accent: 214 45% 16%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 214 35% 20%;
+    --sidebar-ring: 42 95% 55%;
+    --chart-1: 42 90% 50%;
+    --chart-2: 150 60% 40%;
+    --chart-3: 25 85% 50%;
+    --chart-4: 40 50% 70%;
+    --chart-5: 270 30% 65%;
+  }
+
+  .dark {
+    --background: 30 8% 6%;
+    --foreground: 40 25% 95%;
+    --card: 30 6% 9%;
+    --card-foreground: 40 25% 95%;
+    --popover: 30 6% 9%;
+    --popover-foreground: 40 25% 95%;
+    --primary: 42 95% 55%;
+    --primary-foreground: 30 8% 6%;
+    --secondary: 30 6% 12%;
+    --secondary-foreground: 40 25% 95%;
+    --muted: 30 5% 14%;
+    --muted-foreground: 35 8% 60%;
+    --accent: 150 35% 45%;
+    --accent-foreground: 30 8% 6%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 25% 95%;
+    --border: 30 6% 16%;
+    --input: 30 6% 16%;
+    --ring: 42 95% 55%;
+    --sidebar-background: 30 8% 6%;
+    --sidebar-foreground: 40 25% 95%;
+    --sidebar-primary: 42 95% 55%;
+    --sidebar-primary-foreground: 30 8% 6%;
+    --sidebar-accent: 30 6% 12%;
+    --sidebar-accent-foreground: 40 25% 95%;
+    --sidebar-border: 30 6% 16%;
+    --sidebar-ring: 42 95% 55%;
+    --chart-1: 42 90% 50%;
+    --chart-2: 150 60% 40%;
+    --chart-3: 25 85% 50%;
+    --chart-4: 40 50% 70%;
+    --chart-5: 270 30% 65%;
+  }
+
+  section[aria-label='Notifications alt+T'] {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [role='button']:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes fade-in-up {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-down {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-out-up {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  }
+  @keyframes fade-out-down {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+  }
+  @keyframes slide-up {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-down {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes spotlight {
+    from {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
+  @keyframes petal-fall {
+    0% {
+      transform: translateY(0) rotate(0deg) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg) translateX(60px);
+      opacity: 0;
+    }
+  }
+
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+  .animate-fade-out {
+    animation: fade-out 0.5s ease-out;
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+  .animate-fade-in-down {
+    animation: fade-in-down 0.6s ease-out;
+  }
+  .animate-fade-out-up {
+    animation: fade-out-up 0.6s ease-out;
+  }
+  .animate-fade-out-down {
+    animation: fade-out-down 0.6s ease-out;
+  }
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+  .animate-slide-down {
+    animation: slide-down 0.6s ease-out;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-spotlight {
+    animation: spotlight 2s ease forwards;
+  }
+
+  .petal-shape {
+    border-radius: 50% 0 50% 50%;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.4), rgba(16, 185, 129, 0.2));
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(245, 158, 11, 0.1);
+  }
+  .glass-light {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+  }
+
+  .card-shadow-soft {
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+
+  .card-shadow-dark {
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.25),
+      0 1px 4px rgba(0, 0, 0, 0.15);
+  }
+}
