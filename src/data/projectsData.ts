@@ -219,7 +219,7 @@ export const RECOMMENDATIONS_DATA: Recommendation[] = [
     role: 'Gerente Tech',
     context: 'Colega',
     summary:
-      'Monique é muiti antenada quanto a eventos na área de tecnologia, super engajada e motivada.',
+      'Monique é muito antenada quanto a eventos na área de tecnologia, super engajada e motivada.',
     avatar: 'https://img.usecurling.com/ppl/medium?gender=female&seed=8',
   },
   {
